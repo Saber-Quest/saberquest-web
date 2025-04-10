@@ -13,6 +13,7 @@ import { borders } from "@lib/data/borders";
 import { useGlitch } from "react-powerglitch";
 import Header from "@comp/Meta/Title";
 import Autocomplete from "@comp/UI/Components/Profile/Settings/Autocomplete";
+import MapChallenge from "@comp/UI/Components/Profile/Settings/MapChallenge";
 
 export default function ImgTest({
   session,
@@ -187,6 +188,13 @@ export default function ImgTest({
                         setShow={setShow}
                       />
                       <Autocomplete
+                        session={session}
+                        setSession={setSession}
+                        setMessage={setMessage}
+                        setType={setType}
+                        setShow={setShow}
+                      />
+                      <MapChallenge
                         session={session}
                         setSession={setSession}
                         setMessage={setMessage}

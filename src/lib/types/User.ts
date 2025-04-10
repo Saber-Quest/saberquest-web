@@ -13,6 +13,7 @@ export interface UserInfo {
   preference: number;
   patreon: boolean;
   autoComplete: boolean;
+  mapChallenges: boolean;
   admin: boolean;
   banned: boolean;
 }

@@ -19,6 +19,12 @@ let NavigationLinks = [
     needLogin: false,
   },
   {
+    name: "Map Challenge",
+    link: "/mapChallenge",
+    needLogin: false,
+    isNew: true
+  },
+  {
     name: "Shop",
     link: "/shop",
     needLogin: true,
@@ -78,9 +84,14 @@ export default function NavBar({
                       <Link
                         href={item.link}
                         key={index}
-                        className="navButton text-base xl:text-lg min-w-[120px] xl:min-w-[150px]"
+                        className="navButton text-base xl:text-lg min-w-[120px] xl:min-w-[150px] relative"
                       >
                         {item.name}
+                        {item.isNew && (
+                          <span className="relative font-extrabold text-red-600 top-[-20px] left-[-15px] overflow-visible w-2 max-w-2">
+                            NEW
+                          </span>
+                        )}
                       </Link>
                     );
                   }
@@ -175,8 +186,13 @@ export default function NavBar({
                 {NavigationLinks.map((item, index) => {
                   if (!item.needLogin || loggedIn) {
                     return (
-                      <Link href={item.link} key={index} className="navButton">
+                      <Link href={item.link} key={index} className="navButton relative">
                         {item.name}
+                        {item.isNew && (
+                          <span className="relative font-extrabold text-red-600 top-[-15px] left-[-10px] text-sm overflow-visible w-2 max-w-2">
+                            NEW
+                          </span>
+                        )}
                       </Link>
                     );
                   }
@@ -220,10 +236,10 @@ export default function NavBar({
                             </div>
                           </>
                         )) || (
-                          <>
-                            {session && <ProfileMenuSlim userinfo={session} />}{" "}
-                          </>
-                        )}
+                            <>
+                              {session && <ProfileMenuSlim userinfo={session} />}{" "}
+                            </>
+                          )}
                       </div>
                     )) ||
                       null}
