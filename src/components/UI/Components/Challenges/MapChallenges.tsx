@@ -149,7 +149,7 @@ export default function MapChallengeComp({
               >
                 <img
                   src="/assets/images/Pointer.svg"
-                  className="w-4 h-4 mr-2 invert brightness-0 invert"
+                  className="w-4 h-4 mr-2 brightness-0 invert"
                 />
                 OneClick
               </button>
