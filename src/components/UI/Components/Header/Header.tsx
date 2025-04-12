@@ -22,7 +22,7 @@ let NavigationLinks = [
     name: "Map Challenge",
     link: "/mapChallenge",
     needLogin: false,
-    isNew: true
+    isNew: true,
   },
   {
     name: "Shop",
@@ -88,7 +88,7 @@ export default function NavBar({
                       >
                         {item.name}
                         {item.isNew && (
-                          <span className="relative font-extrabold text-red-600 top-[-20px] left-[-15px] overflow-visible w-2 max-w-2">
+                          <span className="relative font-extrabold text-red-600 top-[-20px] left-[-15px] overflow-visible w-2 max-w-2 z-10">
                             NEW
                           </span>
                         )}
@@ -186,7 +186,11 @@ export default function NavBar({
                 {NavigationLinks.map((item, index) => {
                   if (!item.needLogin || loggedIn) {
                     return (
-                      <Link href={item.link} key={index} className="navButton relative">
+                      <Link
+                        href={item.link}
+                        key={index}
+                        className="navButton relative"
+                      >
                         {item.name}
                         {item.isNew && (
                           <span className="relative font-extrabold text-red-600 top-[-15px] left-[-10px] text-sm overflow-visible w-2 max-w-2">
@@ -236,10 +240,10 @@ export default function NavBar({
                             </div>
                           </>
                         )) || (
-                            <>
-                              {session && <ProfileMenuSlim userinfo={session} />}{" "}
-                            </>
-                          )}
+                          <>
+                            {session && <ProfileMenuSlim userinfo={session} />}{" "}
+                          </>
+                        )}
                       </div>
                     )) ||
                       null}
