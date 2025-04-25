@@ -104,6 +104,7 @@ export default function Username({
                 type="text"
                 name="username"
                 id="username"
+                autocomplete="off"
                 maxLength={20}
                 minLength={3}
                 className={`${
